@@ -11,41 +11,10 @@ Most of my repos are private, unfortunately i couldn't share much of my journey 
 <img src="assets/lang.svg" width="100%" alt="languages"/>
 
 <!-- WAKATIME:START -->
-```mermaid
----
-config:
-    xyChart:
-        chartOrientation: vertical
-    themeVariables:
-        xyChart:
-            backgroundColor: "#0d1117"
-            plotColorPalette: "#58a6ff"
----
-xychart-beta
-    title "Coding Activity (Last 14 Days)"
-    x-axis ["Feb 23", "Feb 24", "Feb 25", "Feb 26", "Feb 27", "Feb 28", "Mar 01", "Mar 02", "Mar 03", "Mar 04", "Mar 05", "Mar 06", "Mar 07", "Mar 08"]
-    y-axis "Hours" 0 --> 3
-    line [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 2.5]
-```
-```mermaid
----
-config:
-    xyChart:
-        chartOrientation: horizontal
-    themeVariables:
-        xyChart:
-            backgroundColor: "#0d1117"
-            plotColorPalette: "#3fb950"
----
-xychart-beta
-    title "Languages (Last 14 Days)"
-    x-axis ["Markdown", "Python", "Git Config", "Bash", "YAML"]
-    y-axis "Hours" 0 --> 2
-    bar [1.6, 0.9, 0.0, 0.0, 0.0]
-```
+<img src="assets/wakatime.svg" width="100%" alt="Coding Activity & Languages"/>
 
 ## Stats (Last 14 Days)
-> Total: **2.5h** · Daily avg: **0.2h** · Streak: **1 days** · Best day: **Mar 08** (2.5h) · Top lang: **Markdown** (1.6h) · Most productive: **Sundays**
+> Total: **2.9h** · Daily avg: **0.2h** · Streak: **1 days** · Best day: **Mar 08** (2.9h) · Top lang: **Markdown** (1.7h) · Most productive: **Sundays**
 >
 > 30-day daily avg: **0 secs**
 <!-- WAKATIME:END -->

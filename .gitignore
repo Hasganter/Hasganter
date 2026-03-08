@@ -8,3 +8,6 @@ __pycache__/
 
 # vscode
 .vscode/
+
+# charts
+wakatime*.svg

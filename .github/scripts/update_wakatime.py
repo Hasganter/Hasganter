@@ -14,7 +14,7 @@ except ImportError:
     pass
 
 # ----- Configuration -----
-OUTPUT_MODE = "mermaid"  # "svg" or "mermaid"
+OUTPUT_MODE = "svg"  # "svg" or "mermaid"
 
 WAKATIME_API_KEY = os.environ["WAKATIME_API_KEY"]
 WORKSPACE = os.environ.get("GITHUB_WORKSPACE", os.path.join(os.path.dirname(__file__), "..", ".."))
@@ -29,7 +29,7 @@ BG_COLOR = "#0d1117"
 TEXT_COLOR = "#c9d1d9"
 ACCENT_COLOR = "#58a6ff"
 ACCENT_COLOR_2 = "#3fb950"
-GRID_COLOR = "#21262d"
+GRID_COLOR = "#51565d"
 
 if OUTPUT_MODE == "svg":
     import matplotlib
@@ -74,7 +74,8 @@ def style_ax(ax, title):
     ax.xaxis.label.set_color(TEXT_COLOR)
     for spine in ax.spines.values():
         spine.set_color(GRID_COLOR)
-    ax.yaxis.grid(True, color=GRID_COLOR, linewidth=0.5)
+    ax.yaxis.grid(True, color=GRID_COLOR, linewidth=0.5, alpha=0.3)
+    ax.xaxis.grid(True, color=GRID_COLOR, linewidth=0.5, alpha=0.3)
     ax.set_axisbelow(True)
 
 
@@ -87,53 +88,57 @@ def save_svg(fig, filename):
     print(f"  Saved {path}")
 
 
-def build_activity_chart_svg(summaries):
-    """Generate an SVG line chart of daily coding hours."""
+def build_combined_chart_svg(summaries):
+    """Generate a single SVG with activity line chart and languages bar chart side by side."""
+    # -- Prepare activity data --
     dates = []
-    hours = []
+    act_hours = []
     for day in summaries:
         d = datetime.strptime(day["range"]["date"], "%Y-%m-%d")
         dates.append(d.strftime("%b %d"))
-        hours.append(round(day["grand_total"]["total_seconds"] / 3600, 1))
+        act_hours.append(round(day["grand_total"]["total_seconds"] / 3600, 1))
 
-    fig, ax = plt.subplots(figsize=(10, 3.5))
-    style_ax(ax, f"Coding Activity (Last {DAYS} Days)")
-
-    ax.plot(dates, hours, color=ACCENT_COLOR, linewidth=2, marker="o", markersize=4)
-    ax.fill_between(dates, hours, alpha=0.15, color=ACCENT_COLOR)
-    ax.set_ylabel("Hours")
-    ax.set_ylim(bottom=0)
-    plt.xticks(rotation=45, ha="right")
-    fig.tight_layout()
-
-    save_svg(fig, "wakatime-activity.svg")
-
-
-def build_languages_chart_svg(summaries):
-    """Generate an SVG bar chart of top languages from 14-day summaries."""
+    # -- Prepare languages data --
     lang_totals = defaultdict(float)
     for day in summaries:
         for lang in day.get("languages", []):
             lang_totals[lang["name"]] += lang["total_seconds"]
-    if not lang_totals:
-        return
-    top = sorted(lang_totals.items(), key=lambda x: x[1], reverse=True)[:8]
-    names = [n for n, _ in top]
-    hours = [round(s / 3600, 1) for _, s in top]
+    has_languages = bool(lang_totals)
+    if has_languages:
+        top = sorted(lang_totals.items(), key=lambda x: x[1], reverse=True)[:8]
+        lang_names = [n for n, _ in top]
+        lang_hours = [round(s / 3600, 1) for _, s in top]
 
-    fig, ax = plt.subplots(figsize=(10, 3.5))
-    style_ax(ax, f"Languages (Last {DAYS} Days)")
+    ncols = 2 if has_languages else 1
+    fig, axes = plt.subplots(1, ncols, figsize=(8 * ncols, 4))
+    if ncols == 1:
+        axes = [axes]
 
-    bars = ax.bar(names, hours, color=ACCENT_COLOR_2, edgecolor=ACCENT_COLOR_2, width=0.6)
-    for bar, h in zip(bars, hours):
-        if h > 0:
-            ax.text(bar.get_x() + bar.get_width() / 2, bar.get_height() + 0.05,
-                    f"{h}h", ha="center", va="bottom", color=TEXT_COLOR, fontsize=8)
-    ax.set_ylabel("Hours")
-    ax.set_ylim(bottom=0)
+    # -- Left: Activity line chart --
+    ax1 = axes[0]
+    style_ax(ax1, f"Coding Activity (Last {DAYS} Days)")
+    ax1.plot(dates, act_hours, color=ACCENT_COLOR, linewidth=2, marker="o", markersize=4)
+    ax1.fill_between(dates, act_hours, alpha=0.15, color=ACCENT_COLOR)
+    ax1.set_ylabel("Hours")
+    ax1.set_ylim(bottom=0)
+    ax1.tick_params(axis="x", rotation=45)
+
+    # -- Right: Languages horizontal bar chart --
+    if has_languages:
+        ax2 = axes[1]
+        style_ax(ax2, f"Languages (Last {DAYS} Days)")
+        bars = ax2.barh(lang_names, lang_hours, color=ACCENT_COLOR_2, edgecolor=ACCENT_COLOR_2, height=0.6)
+        for bar, h in zip(bars, lang_hours):
+            if h > 0:
+                ax2.text(bar.get_width() + 0.05, bar.get_y() + bar.get_height() / 2,
+                         f"{h}h", ha="left", va="center", color=TEXT_COLOR, fontsize=8)
+        ax2.set_xlabel("Hours")
+        ax2.set_xlim(left=0)
+        ax2.invert_yaxis()
+
     fig.tight_layout()
-
-    save_svg(fig, "wakatime-languages.svg")
+    save_svg(fig, "wakatime.svg")
+    return has_languages
 
 
 def build_editors_os_chart_svg(stats):
@@ -208,11 +213,9 @@ def build_text_stats(summaries, stats):
 > 30-day daily avg: **{daily_avg_30d}**"""
 
 
-def build_readme_content_svg(has_languages, has_editors_os, text_stats):
+def build_readme_content_svg(has_editors_os, text_stats):
     """Build the README content between WAKATIME markers using SVG img embeds."""
-    lines = ['<img src="assets/wakatime-activity.svg" width="100%" alt="Coding Activity"/>']
-    if has_languages:
-        lines.append('<img src="assets/wakatime-languages.svg" width="100%" alt="Languages"/>')
+    lines = ['<img src="assets/wakatime.svg" width="100%" alt="Coding Activity & Languages"/>']
     if has_editors_os:
         lines.append('<img src="assets/wakatime-editors-os.svg" width="100%" alt="Editors & OS"/>')
     lines.append("")
@@ -247,6 +250,8 @@ config:
         xyChart:
             backgroundColor: "{BG_COLOR}"
             plotColorPalette: "{ACCENT_COLOR}"
+            yAxisLineColor: "{TEXT_COLOR}70"
+            yAxisTickColor: "{TEXT_COLOR}70"
 ---
 xychart-beta
     title "Coding Activity (Last {DAYS} Days)"
@@ -281,6 +286,10 @@ config:
         xyChart:
             backgroundColor: "{BG_COLOR}"
             plotColorPalette: "{ACCENT_COLOR_2}"
+            xAxisLineColor: "{TEXT_COLOR}70"
+            xAxisTickColor: "{TEXT_COLOR}70"
+            yAxisLineColor: "{TEXT_COLOR}70"
+            yAxisTickColor: "{TEXT_COLOR}70"
 ---
 xychart-beta
     title "Languages (Last {DAYS} Days)"
@@ -328,9 +337,18 @@ xychart-beta
 
 def build_readme_content_mermaid(activity_md, languages_md, editors_os_md, text_stats):
     """Build the README content between WAKATIME markers using mermaid blocks."""
-    lines = [activity_md]
     if languages_md:
-        lines.append(languages_md)
+        combined = (
+            '<table width="100%">\n'
+            '<tr>\n'
+            f'<td width="50%">\n\n{activity_md}\n\n</td>\n'
+            f'<td width="50%">\n\n{languages_md}\n\n</td>\n'
+            '</tr>\n'
+            '</table>'
+        )
+        lines = [combined]
+    else:
+        lines = [activity_md]
     if editors_os_md:
         lines.append(editors_os_md)
     lines.append("")
@@ -382,12 +400,10 @@ def main():
 
     if OUTPUT_MODE == "svg":
         print("Generating SVG charts...")
-        build_activity_chart_svg(summaries)
-        if has_languages:
-            build_languages_chart_svg(summaries)
+        build_combined_chart_svg(summaries)
         if has_editors_os:
             build_editors_os_chart_svg(stats)
-        content = build_readme_content_svg(has_languages, has_editors_os, text_stats)
+        content = build_readme_content_svg(has_editors_os, text_stats)
 
     elif OUTPUT_MODE == "mermaid":
         print("Generating Mermaid charts...")
