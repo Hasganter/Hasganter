@@ -5,10 +5,13 @@ import re
 import json
 import base64
 import urllib.request
-from dotenv import load_dotenv
 from collections import defaultdict
 from datetime import datetime, timedelta, timezone
-load_dotenv()
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    pass
 
 # ----- Configuration -----
 OUTPUT_MODE = "mermaid"  # "svg" or "mermaid"
