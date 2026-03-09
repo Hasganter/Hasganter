@@ -14,9 +14,9 @@ Most of my repos are private, unfortunately i couldn't share much of my journey 
 <img src="assets/wakatime.svg" width="100%" alt="Coding Activity & Languages"/>
 
 ## Stats (Last 14 Days)
-> Total: **2.9h** · Daily avg: **0.2h** · Streak: **1 days** · Best day: **Mar 08** (2.9h) · Top lang: **Markdown** (1.7h) · Most productive: **Sundays**
+> Total: **4.0h** · Daily avg: **0.3h** · Streak: **2 days** · Best day: **Mar 08** (2.9h) · Top lang: **Markdown** (1.7h) · Most productive: **Sundays**
 >
-> 30-day daily avg: **0 secs**
+> 30-day daily avg: **N/A**
 <!-- WAKATIME:END -->
 
 ***
