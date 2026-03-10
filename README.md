@@ -12,11 +12,12 @@ Most of my repos are private, unfortunately i couldn't share much of my journey 
 
 <!-- WAKATIME:START -->
 <img src="assets/wakatime.svg" width="100%" alt="Coding Activity & Languages"/>
+<img src="assets/wakatime-editors-os.svg" width="100%" alt="Editors & OS"/>
 
 ## Stats (Last 14 Days)
-> Total: **4.0h** · Daily avg: **0.3h** · Streak: **2 days** · Best day: **Mar 08** (2.9h) · Top lang: **Markdown** (1.7h) · Most productive: **Sundays**
+> Total: **4.1h** · Daily avg: **0.3h** · Streak: **3 days** · Best day: **Mar 08** (2.9h) · Top lang: **Markdown** (1.7h) · Most productive: **Sundays**
 >
-> 30-day daily avg: **N/A**
+> 30-day daily avg: **5 mins**
 <!-- WAKATIME:END -->
 
 ***
