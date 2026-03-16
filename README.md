@@ -10,6 +10,7 @@ Most of my repos are private, unfortunately i couldn't share much of my journey 
 
 <img src="assets/lang.svg" width="100%" alt="languages"/>
 
+<details><summary><h3>Useless Stats</h3></summary>
 <!-- WAKATIME:START -->
 <img src="assets/wakatime.svg" width="100%" alt="Coding Activity & Languages"/>
 <img src="assets/wakatime-editors-os.svg" width="100%" alt="Editors & OS"/>
@@ -19,6 +20,7 @@ Most of my repos are private, unfortunately i couldn't share much of my journey 
 >
 > 30-day daily avg: **18 mins**
 <!-- WAKATIME:END -->
+</details>
 
 ***
 
