@@ -16,9 +16,9 @@ Most of my repos are private, unfortunately i couldn't share much of my journey 
 <img src="assets/wakatime-editors-os.svg" width="100%" alt="Editors & OS"/>
 
 ## Stats (Last 14 Days)
-> Total: **9.5h** · Daily avg: **0.7h** · Streak: **1 days** · Best day: **Mar 10** (3.7h) · Top lang: **PHP** (4.0h) · Most productive: **Tuesdays**
+> Total: **14.6h** · Daily avg: **1.0h** · Streak: **0 days** · Best day: **Mar 19** (6.0h) · Top lang: **Markdown** (4.1h) · Most productive: **Thursdays**
 >
-> 30-day daily avg: **20 mins**
+> 30-day daily avg: **21 mins**
 <!-- WAKATIME:END -->
 </details>
 
