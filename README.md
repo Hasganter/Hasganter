@@ -18,7 +18,7 @@ Most of my repos are private, unfortunately i couldn't share much of my journey 
 ## Stats (Last 14 Days)
 > Total: **6.8h** · Daily avg: **0.5h** · Streak: **0 days** · Best day: **Mar 19** (6.0h) · Top lang: **C++** (3.6h) · Most productive: **Thursdays**
 >
-> 30-day daily avg: **47 mins**
+> 30-day daily avg: **50 mins**
 <!-- WAKATIME:END -->
 </details>
 
