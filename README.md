@@ -18,7 +18,7 @@ Most of my repos are private, unfortunately i couldn't share much of my journey 
 ## Stats (Last 14 Days)
 > Total: **5.6h** · Daily avg: **0.4h** · Streak: **0 days** · Best day: **Apr 22** (3.5h) · Top lang: **Bash** (4.4h) · Most productive: **Wednesdays**
 >
-> 30-day daily avg: **1 hr 25 mins**
+> 30-day daily avg: **1 hr 8 mins**
 <!-- WAKATIME:END -->
 </details>
 
