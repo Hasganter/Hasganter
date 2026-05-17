@@ -18,7 +18,7 @@ Most of my repos are private, unfortunately i couldn't share much of my journey 
 ## Stats (Last 14 Days)
 > Total: **5.8h** · Daily avg: **0.4h** · Streak: **0 days** · Best day: **May 09** (4.5h) · Top lang: **Markdown** (4.7h) · Most productive: **Saturdays**
 >
-> 30-day daily avg: **1 hr 41 mins**
+> 30-day daily avg: **1 hr 42 mins**
 <!-- WAKATIME:END -->
 </details>
 
