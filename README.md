@@ -13,12 +13,11 @@ Most of my repos are private, unfortunately i couldn't share much of my journey 
 <details><summary><h3>Useless Stats</h3></summary>
 <!-- WAKATIME:START -->
 <img src="assets/wakatime.svg" width="100%" alt="Coding Activity & Languages"/>
-<img src="assets/wakatime-editors-os.svg" width="100%" alt="Editors & OS"/>
 
 ## Stats (Last 14 Days)
 > Total: **4.5h** · Daily avg: **0.3h** · Streak: **0 days** · Best day: **May 09** (4.5h) · Top lang: **Markdown** (4.3h) · Most productive: **Saturdays**
 >
-> 30-day daily avg: **1 hr 46 mins**
+> 30-day daily avg: **N/A**
 <!-- WAKATIME:END -->
 </details>
 
