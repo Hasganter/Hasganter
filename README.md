@@ -26,7 +26,7 @@ Most of my repos are private, unfortunately i couldn't share much of my journey 
 
 #### Join me in Project TEST - Co-owner
 
-<a href="https://discord.gg/ekH4samk">
+<a href="https://discord.gg/vDjryD6baF">
 <img src="https://dcbadge.limes.pink/api/server/ekH4samk?style=flat" alt="Discord members"/></a>
 
 <a href="https://projecttests.org/">
