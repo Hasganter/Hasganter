@@ -11,15 +11,11 @@ Most of my repos are private, unfortunately i couldn't share much of my journey 
 <img src="assets/lang.svg" width="100%" alt="languages"/>
 
 <details><summary><h3>Useless Stats</h3></summary>
-<!-- WAKATIME:START -->
-<img src="assets/wakatime.svg" width="100%" alt="Coding Activity & Languages"/>
-<img src="assets/wakatime-editors-os.svg" width="100%" alt="Editors & OS"/>
+Actual coding stats which github cant track because of private repos.
 
-## Stats (Last 14 Days)
-> Total: **3.0h** · Daily avg: **0.2h** · Streak: **0 days** · Best day: **Jun 05** (1.9h) · Top lang: **Markdown** (2.7h) · Most productive: **Fridays**
->
-> 30-day daily avg: **1 hr 53 mins**
-<!-- WAKATIME:END -->
+<br><a href="https://wakatime.com"><img src="https://wakatime.com/share/@Hasganter/cd77e81a-afd8-4170-9483-3674e87d0a03.png" width="100%"/></a>
+<hr>
+<a href="https://wakatime.com"><img src="https://wakatime.com/share/@Hasganter/4e0a8809-7ea9-49df-9469-31ebf0532d39.png" width="100%"/></a>
 </details>
 
 ***
@@ -27,7 +23,7 @@ Most of my repos are private, unfortunately i couldn't share much of my journey 
 #### Join me in Project TEST - Co-owner
 
 <a href="https://discord.gg/vDjryD6baF">
-<img src="https://dcbadge.limes.pink/api/server/ekH4samk?style=flat" alt="Discord members"/></a>
+<img src="https://dcbadge.limes.pink/api/server/vDjryD6baF?style=flat" alt="Discord members"/></a>
 
 <a href="https://projecttests.org/">
 <img src="https://img.shields.io/website?down_color=red&down_message=offline&up_color=green&up_message=online&label=projecttests.org&url=https%3A%2F%2Fprojecttests.org%2F" alt="Project TEST status"/></a>
