@@ -26,6 +26,6 @@ Actual coding stats which github cant track because of private repos.
 <img src="https://dcbadge.limes.pink/api/server/vDjryD6baF?style=flat" alt="Discord members"/></a>
 
 <a href="https://projecttests.org/">
-<img src="https://img.shields.io/website?down_color=red&down_message=offline&up_color=green&up_message=online&label=projecttests.org&url=https%3A%2F%2Fprojecttests.org%2F" alt="Project TEST status"/></a>
+<img src="https://img.shields.io/website?down_color=red&down_message=offline&up_color=green&up_message=online&label=projecttest.org&url=https%3A%2F%2Fprojecttest.org%2F" alt="Project TEST website"/></a>
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=80&section=footer" width="100%" alt="footer"/>
